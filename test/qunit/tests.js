@@ -1,3 +1,4 @@
+// TODO: move these files to /test and delete /test/qunit
 /* global $, QUnit, swal */
 
 QUnit.test('version is correct semver', (assert) => {
@@ -512,17 +513,12 @@ QUnit.test('modal vertical offset', (assert) => {
   const done = assert.async(1)
   // create a modal with dynamic-height content
   swal({
-    imageUrl: '/assets/swal2-logo.png',
+    imageUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNikAQAACIAHF/uBd8AAAAASUVORK5CYII=',
     title: 'Title',
     html: '<hr><div style="height: 50px"></div><p>Text content</p>',
     type: 'warning',
     input: 'text',
     animation: false
-  })
-
-  // if we can't load local images, load an external one instead
-  $('.swal2-image').on('error', () => {
-    this.src = 'https://unsplash.it/150/50?random'
   })
 
   // listen for image load
@@ -628,6 +624,7 @@ QUnit.test('esc key', (assert) => {
   }))
 })
 
+// flaky test
 QUnit.test('allowEscapeKey as a function', (assert) => {
   const done = assert.async()
 
