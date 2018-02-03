@@ -627,7 +627,6 @@ QUnit.test('esc key', (assert) => {
   }))
 })
 
-// flaky test
 QUnit.test('allowEscapeKey as a function', (assert) => {
   const done = assert.async()
 
