@@ -538,16 +538,19 @@ QUnit.test('target', (assert) => {
   assert.equal(document.body, document.querySelector('.swal2-container').parentNode)
   swal.close()
 
-  swal({title: 'Custom valid target (string)', target: '#qunit'}) // switch targets
-  assert.equal(document.querySelector('#qunit'), document.querySelector('.swal2-container').parentNode)
+  const dummyTargetElement = Object.assign(document.createElement('div'), {id: 'dummy-target'})
+  document.body.appendChild(dummyTargetElement)
+
+  swal({title: 'Custom valid target (string)', target: '#dummy-target'}) // switch targets
+  assert.equal(document.querySelector('.swal2-container').parentNode, dummyTargetElement)
   swal.close()
 
   swal({title: 'Custom invalid target (string)', target: 'lorem_ipsum'}) // switch targets
-  assert.equal(document.body, document.querySelector('.swal2-container').parentNode)
+  assert.equal(document.querySelector('.swal2-container').parentNode, document.body)
   swal.close()
 
-  swal({title: 'Custom valid target (element)', target: $('#qunit')[0]})
-  assert.equal($('#qunit')[0], document.querySelector('.swal2-container').parentNode)
+  swal({title: 'Custom valid target (element)', target: dummyTargetElement})
+  assert.equal(document.querySelector('.swal2-container').parentNode, dummyTargetElement)
   swal.close()
 
   swal({title: 'Custom invalid target (element)', target: true})
