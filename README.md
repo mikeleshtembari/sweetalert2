@@ -186,13 +186,13 @@ If you would like to contribute enhancements or fixes, please do the following:
 
 3. When in the SweetAlert2 directory, run `npm install` or `yarn install` to install dependencies.
 
-4. Start gulp watcher `gulp watch` to automatically serve, build, and minify the SCSS and JS-files.
-
-5. Ensure that you didn't break any of tests:
-
-  - in browser: http://localhost:8080/test/qunit/
-  - via CLI: `npm test`
-
+4. To begin active development, run `npm start`. This does several things for you:
+ - Reports any linting errors or warnings
+ - Builds the `dist` folder
+ - Serves tests at
+   - http://localhost:8080/ shows results in command-line console
+   - http://localhost:8080/debug.html shows results in Chrome devtools console. good place to experiment with `swal`. doesn't refresh when tests or build
+ - Re-lints, re-builds and re-tests as necessary when files change
 
 Donations
 ---------
