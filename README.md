@@ -189,9 +189,9 @@ If you would like to contribute enhancements or fixes, please do the following:
 4. To begin active development, run `npm start`. This does several things for you:
  - Reports any linting errors or warnings
  - Builds the `dist` folder
- - Serves tests at
+ - Serves tests:
    - http://localhost:8080/ shows results in command-line console
-   - http://localhost:8080/debug.html shows results in Chrome devtools console. good place to experiment with `swal`. doesn't refresh when tests or build
+   - http://localhost:8080/debug.html shows results in browser console. Also a good place to experiment with `swal`. Doesn't refresh when build or tests change.
  - Re-lints, re-builds and re-tests as necessary when files change
 
 Donations
